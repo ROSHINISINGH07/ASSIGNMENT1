@@ -1,8 +1,11 @@
-def factorial(n):
-    fac: int=1
-    for i in range(n):
-        fac=fac *(i+1)
-    print("Factorial is",fac)
-n = int(input("Enter a number : "))
-factorial(n)
+def fun(n):
+  return n % 3 == 0 or n % 5 == 0
 
+li = (52,27,85,35,40,15,6,9,18)
+
+print(list(filter(fun,li)))
+
+# program for divisibility of 3 or 5 using lambda
+
+li = (52,27,85,35,40,15,6,9,18)
+print(list(filter(lambda n : n % 3 == 0 or n % 5 == 0 ,li)))
