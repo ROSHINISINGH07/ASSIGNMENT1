@@ -1,11 +1,13 @@
-def fun(n):
-  return n % 3 == 0 or n % 5 == 0
+def mod_div(fun):
+  def x(a,b):
+    if a < b:
+      a,b = b, a
+    return fun(a,b)
 
-li = (52,27,85,35,40,15,6,9,18)
+  return x
+@mod_div
+def div(a,b):
+  return a // b
 
-print(list(filter(fun,li)))
-
-# program for divisibility of 3 or 5 using lambda
-
-li = (52,27,85,35,40,15,6,9,18)
-print(list(filter(lambda n : n % 3 == 0 or n % 5 == 0 ,li)))
+a,b = (int(i) for i in input('Enter two values: ').split())
+print(div(a, b))
